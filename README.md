@@ -37,6 +37,7 @@ Sabre
 │   ├── mnist.py           - MNIST classification model.
 │   ├── denoise.py         - Denoising model implementation.
 │   └── helpers.py         - Helper functions for model management.
+│   └── ...
 ├── notebooks           - Jupyter notebooks for demonstrations.
 │   ├── cifar10.py         - CIFAR-10 notebook.
 │   ├── mnist.py           - MNIST notebook.

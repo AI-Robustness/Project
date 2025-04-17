@@ -7,9 +7,9 @@ root_path = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(root_path))
 
 from datasets.cifar10 import get_cifar10
-#from models.cifar10 import Cifar10Model, resnet18
-from models.cifar10_resnet34 import Cifar10Model, ResNet34
-from models.cifar10_resnet34_G import Cifar10Model, FDResNet34
+from models.cifar10 import Cifar10Model, resnet18
+#from models.cifar10_resnet34 import Cifar10Model, ResNet34
+#from models.cifar10_resnet34_G import Cifar10Model, FDResNet34
 from models.helpers import DataParallel
 from core.defenses.sabre import SabreWrapper
 from experiments.utils import ceil_dec
@@ -64,7 +64,7 @@ def main():
     }
 
     # Initialize Models
-    baseline_model = FDResNet34(num_c=10)
+    baseline_model = resnet18()
     sabre_model = SabreWrapper(eps=epsilon, use_rand=use_rand, n_variants=n_variants, base_model=Cifar10Model())
     models = {"baseline": baseline_model, "Adversarial Training": baseline_model, "SABRE": sabre_model}
 
